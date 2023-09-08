@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chi tiết chẩn đoán</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #006d6d;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #008080;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #333333;
+        }
+
+        .detail-item {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .detail-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .detail-item strong {
+            font-weight: bold;
+        }
+
+        .detail-item span {
+            font-weight: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Chi tiết chẩn đoán</h1>
+        <div class="detail-item">
+            <h2>Thông tin chẩn đoán:</h2>
+            <p><strong>Lần chẩn đoán:</strong> <span>{{ chd_data[0] }}</span></p>
+            <p><strong>Chỉ số huyết áp:</strong> <span>{{ chd_data[1] }}</span></p>
+            <p><strong>Lượng thuốc lá:</strong> <span>{{ chd_data[2] }}</span></p>
+            <p><strong>Cholesterol LDL:</strong> <span>{{ chd_data[3] }}</span></p>
+            <p><strong>Chỉ số mỡ cơ thể:</strong> <span>{{ chd_data[4] }}</span></p>
+            <p><strong>Tiền sử gia đình:</strong> <span>{% if chd_data[5] == 1 %}Có{% else %}Không{% endif %}</span></p>
+            <p><strong>Chỉ số Type-A:</strong> <span>{{ chd_data[6] }}</span></p>
+            <p><strong>Chỉ số mỡ bụng:</strong> <span>{{ chd_data[7] }}</span></p>
+            <p><strong>Tuổi:</strong> <span>{{ chd_data[8] }}</span></p>
+            <p><strong>Nguy cơ bị bệnh:</strong> <span>{% if chd_data[9] == 1 %}Có{% else %}Không{% endif %}</span></p>
+        </div>
+    </div>
+</body>
+</html>

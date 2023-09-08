@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thông tin cá nhân</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        form {
+            width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333333;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 32px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            color: #666666;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        h3 {
+            color: #999999;
+            margin-top: 40px;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+
+        p {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #333333;
+            line-height: 1.5;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 15px;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #4CAF50;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        a.button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h1>Thông tin cá nhân</h1>
+        <h2>Xin chào: {{ user[1] }}</h2>
+        <h3>Thông tin:</h3>
+        <p><strong>Tên người dùng:</strong> {{ user[1] }}</p>
+        <h3>Các lần chẩn đoán bệnh:</h3>
+        {% if chd_data %}
+            <ul>
+                {% for data in chd_data %}
+                    <li><a href="/detail/{{ data[0] }}" class="button">Lần {{ data[0] }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Không có dữ liệu chẩn đoán</p>
+        {% endif %}
+    </form>
+</body>
+</html>
